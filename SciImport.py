@@ -16,10 +16,15 @@ class BloodCount(object):
     def GetName(self, nameDate):
         if(len(nameDate.split("-")) > 1):
             name = nameDate.split("-")
-            return(str(name[1]))
-        else:
+            return(str(name[1]))                
+        elif(len(nameDate.split(".")) > 1):
             name = nameDate.split(".")
             return(str(name[1]))
+        elif(len(nameDate.split(" ")) > 1):
+            name = nameDate.split(" ")
+            return(str(name[1]))
+        else:
+            return("")
     
     def GetDate(self, nameDate, startDate):
         num = len(nameDate.split("\x00"))
